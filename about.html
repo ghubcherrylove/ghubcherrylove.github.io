@@ -1,0 +1,179 @@
+---
+layout: page
+title: "关于我"
+description: "一生中最爱---zl"
+header-img: "img/about-bg.jpg"
+---
+
+<!-- Language Selector -->
+<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select> -->
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <p>定风波</p>
+    <blockquote>
+        三月七日，沙湖道中遇雨。雨具先去，同行皆狼狈，余独不觉，已而遂晴，故作此词。
+    </blockquote>
+    <p>莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋7轻胜马，谁怕？一蓑烟雨任平生。
+    料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴</p>
+
+    <p>我是潘明任，艺术名：明烟雨任，灵感源于“一蓑烟雨任平生”，改为“一明烟雨任平生”取其中四个字“明烟雨任”为我的艺术名。</p>
+    <p><b>基本信息</b></p>
+    <p>出生：1994-10-12</p>
+    <p>毕业学校：云南大学滇池学院</p>
+    <p>学历：本科</p>
+    <p>专业：计算机科学与技术</p>
+    <p>籍贯：广西</p>
+    <p>现居：广东-深圳</p>
+    <p>个人网站：ghubcherrylove.github.io</p>
+    <hr>
+    <p><b>联系方式</b></p>
+    <p>手机：18124074540</p>
+    <p>邮箱：741884588@qq.com</p>
+    <p>地址：广东-深圳-龙岗-龙园路</p>
+    <hr>
+    <p><b>掌握技能</b></p>
+    <p>Bootstrap：熟练</p>
+    <p>Less：熟练</p>
+    <p>Php/java/.NET：熟悉</p>
+    <p>Js/css/html：熟练</p>
+    <p>Git：一般</p>
+    <p>Mysql：熟悉</p>
+    <p>Ps：熟练</p>
+    <p>Grunt：一般</p>
+    <p>Firefox/chrome：熟练</p>
+    <p>node.js/angularjs：了解</p>
+    <hr>
+    <p><b>个人简介</b></p>
+    <p>计算机科学与技术专业，参加工作一年，有开发过三个项目的经验，熟悉php，ajax，java，.NET，mysql，git等技术，会less自定义bootstrap并有丰富的经验，有grunt构建工具丰富的使用经验，熟悉thinkPHP，wordpress开源项目并有过相关的开发经验，熟练使用firebox，chrome等调试工具解决问题。会数据库的基本操作，对nodejs，angularjs等技术有一定的了解，对各浏览器的兼容性较好的解决能力。曾在设计公司工作过，对PS,AI,CDR等设计软件有较好的掌握能力，同时积累了团队合作经验。个人性格随和，责任心强。寻求一份长期且稳定的工作。
+    </p>
+    <hr>
+    <p><b>工作经历</b></p>
+    <p>2016.02-2017.2</p>
+    <p>深圳亘强科技有限公司</p>
+    <p>&nbsp;&nbsp;担任web前端工程师。主要负责公司产品内部产品前端页面设计，bug修复，FAE系统设计。
+    主要用到的技术有：bootstrap，less，jquery，php，thinkphp，ajax等</p>
+    <p>2015.12-2016.2</p>
+    <p>云南人本生科技有限公司</p>
+    <p>&nbsp;&nbsp;担任平面设计师助理。主要负责公司产品的外观设计,包装,与宣传。使用的技术有：PS,AI,CDR,ID等技术来实现的。</p>
+    <hr>
+    <p><b>相关荣誉</b></p>
+    <p>计算机二级证书</p>
+    <p>机动车驾驶证</p>
+    <p>专业成绩班级前十</p>
+    <p>学校三好学生</p>
+</div>
+
+<!-- English Version -->
+<!-- <div class="en post-container">
+
+</div> -->
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <!-- This id is used for indexing my loss comments forcedly -->
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+    <!-- U can just use this key generated to index comments at page about -->
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
